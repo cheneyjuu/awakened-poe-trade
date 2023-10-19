@@ -87,7 +87,7 @@ export function poeWebApi () {
     case 'cmn-Hant': return (realm === 'pc-garena')
       ? 'web.poe.garena.tw'
       : 'www.pathofexile.com'
-    case 'zh-cn': return 'www.pathofexile.com'
+    case 'cmn-Hans': return 'www.pathofexile.com'
   }
 }
 
@@ -109,7 +109,7 @@ export interface Config {
   logKeys: boolean
   accountName: string
   stashScroll: boolean
-  language: 'en' | 'ru' | 'cmn-Hant' | 'zh-cn'
+  language: 'en' | 'ru' | 'cmn-Hant' | 'cmn-Hans'
   realm: 'pc-ggg' | 'pc-garena'
   widgets: widget.Widget[]
   fontSize: number
@@ -465,7 +465,7 @@ function upgradeConfig (_config: Config): Config {
       config.language = 'cmn-Hant'
     }
     if (config.language === 'zh_CN' as string) {
-      config.language = 'zh-cn'
+      config.language = 'cmn-Hans'
     }
 
     config.configVersion = 12
